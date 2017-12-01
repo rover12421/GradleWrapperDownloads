@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<?import com.rover12421.gradle.wrapper.downloads.ui.view.CheckBoxTableCellFactory?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.rover12421.gradle.wrapper.downloads.ui.controller.VersionListController">
+    <SplitPane
+            layoutX="80.0"
+            layoutY="80.0"
+            prefHeight="700.0"
+            prefWidth="800.0"
+            AnchorPane.bottomAnchor="0.0"
+            AnchorPane.leftAnchor="0.0"
+            AnchorPane.rightAnchor="0.0"
+            AnchorPane.topAnchor="0.0">
+        <TableView fx:id="versionInfoTable"
+                   prefHeight="398.0" prefWidth="174.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                   AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <columns>
+                <TableColumn fx:id="selectColumn" prefWidth="40.0" text="Sel">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="property"/>
+                    </cellValueFactory>
+                    <cellFactory>
+                        <CheckBoxTableCellFactory/>
+                    </cellFactory>
+                </TableColumn>
+                <TableColumn fx:id="versionColumn" prefWidth="150.0" text="VersionCode"/>
+                <TableColumn fx:id="typeColumn" prefWidth="100.0" text="VersionType"/>
+                <!--<TableColumn fx:id="buildColumn" prefWidth="100.0" text="Build"/>-->
+                <!--<TableColumn fx:id="sha256Column" prefWidth="300.0" style="-fx-alignment: center-right" text="sha256"/>-->
+                <TableColumn fx:id="statusColumn" prefWidth="400.0" style="-fx-font-family: monospace" text="status">
+                </TableColumn>
+            </columns>
+        </TableView>
+    </SplitPane>
+</AnchorPane>
